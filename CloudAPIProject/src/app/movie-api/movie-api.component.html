@@ -1,0 +1,10 @@
+<router-outlet></router-outlet>
+<h1>
+  Zoek een film naar keuzen!
+</h1>
+<div>
+  <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+</div>
+<body>
+
+</body>
