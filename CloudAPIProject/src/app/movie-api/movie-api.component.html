@@ -1,16 +1,42 @@
 <router-outlet></router-outlet>
-<h1>
-  Zoek een film naar keuzen!
-</h1>
-<div>
-  <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)" (onSelect)="Choice($event)"></p-autoComplete>
-  <p *ngIf="error">{{error}}</p>
-</div>
-<body *ngIf="apiService.film">
-  <div *ngIf="apiService.film.Search">
-      <h2>{{apiService.film.Search[0].Title}}</h2>
-      <p *ngIf="apiService.film.Search[0].Type == 'movie'">De film is uitgebracht in het jaar {{apiService.film.Search[0].Year}}.</p>
-      <p *ngIf="apiService.film.Search[0].Type == 'series'">De serie is uitgebracht in het jaar {{apiService.film.Search[0].Year}}.</p>
-      <img *ngIf="apiService.film.Search[0].Poster" [src]="apiService.film.Search[0].Poster">
-  </div>
+<body>
+  <section>
+      <h1>Zoek een film/serie naar keuzen!</h1>
+      <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)" (onSelect)="Choice($event)"></p-autoComplete>
+      <p *ngIf="error">{{error}}</p>
+      <div *ngIf="apiService.film">
+          <div *ngIf="apiService.film.Search">
+              <h2>{{apiService.film.Search[0].Title}}</h2>
+              <p *ngIf="apiService.film.Search[0].Type == 'movie'">De film is uitgebracht in het jaar {{apiService.film.Search[0].Year}}.</p>
+              <p *ngIf="apiService.film.Search[0].Type == 'series'">De serie is uitgebracht in het jaar {{apiService.film.Search[0].Year}}.</p>
+              <img *ngIf="apiService.film.Search[0].Poster" [src]="apiService.film.Search[0].Poster">
+          </div>
+      </div>
+  </section>
+  
+  <section>
+      <h1>Zoek een random film/serie</h1>
+      <button (click)="RandomMovie()">Random movie/episode/serie</button>
+      <div *ngIf="apiService.randomFilm">
+        <h2>{{apiService.randomFilm.Title}}</h2>
+        <img *ngIf="apiService.randomFilm.Poster" [src]="apiService.randomFilm.Poster"><br>
+        <p class="description">{{apiService.randomFilm.Plot}}</p>
+        <p>
+          <strong>Type: </strong>{{apiService.randomFilm.Type}}<br>
+          <strong>Released: </strong>{{apiService.randomFilm.Released}}<br>
+          <strong>Released on DVD: </strong>{{apiService.randomFilm.DVD}}<br>
+          <strong>Duration: </strong>{{apiService.randomFilm.Runtime}}<br>
+          <strong>Genre: </strong>{{apiService.randomFilm.Genre}}<br>
+          <strong>Production: </strong>{{apiService.randomFilm.Production}}<br>
+          <strong>Director: </strong>{{apiService.randomFilm.Director}}<br>
+          <strong>Actors: </strong>{{apiService.randomFilm.Actors}}<br>
+          <strong>Spoken Language: </strong>{{apiService.randomFilm.Language}}<br>
+          <strong>Country: </strong>{{apiService.randomFilm.Country}}<br>
+          <strong>Awards: </strong>{{apiService.randomFilm.Awards}}<br>
+          <strong>BoxOffice: </strong>{{apiService.randomFilm.BoxOffice}}
+        </p>
+        More info: <a href="{{apiService.randomFilm.Website}}">{{apiService.randomFilm.Website}}</a>
+      </div>
+  </section>
+
 </body>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService, Movie } from '../Common/movie.service';
-import { delay } from 'q';
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-movie-api',
@@ -46,6 +46,23 @@ export class MovieAPIComponent implements OnInit {
         this.error=this.apiService.film.Error;
       }
     })
-    
   } 
+
+  min:number = 1;
+  max:number = 2000000;
+  randomwaarde:String;
+  RandomMovie(){
+    this.randomwaarde = _.random(this.min,this.max,false);
+    var s = this.randomwaarde + "";
+    while (s.length < 7) s = "0" + s;
+    this.randomwaarde = s;
+    //console.log(this.randomwaarde);
+    this.apiService.GetMovieByID(this.randomwaarde).subscribe( uitkomst =>{
+      this.apiService.randomFilm = uitkomst;
+      if(!this.apiService.randomFilm.Poster.includes("https")){
+        this.apiService.randomFilm.Poster= "assets/img/NoImageAvailable.png"
+      }  
+      //console.log(this.apiService.randomFilm);
+    })
+  }
 } 

@@ -1,8 +1,23 @@
 h1{
     margin-top: 10px;
 }
+body{
+    display: grid;
+    grid-template-columns: 50% 50%
+}
+h2{
+    text-align: center;
+    color: blue;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.description{
+    text-align: center;
+    font-weight: bolder;
+}
 button{
-    margin-left: 20px;
-    width: 50px;
-    height: 25px;
+    margin-right: 10px;
 }
