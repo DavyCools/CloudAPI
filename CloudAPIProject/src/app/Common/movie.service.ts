@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class MovieService {
-
+  
+  film: Movie;
   constructor(private http: HttpClient) { }
 
   public GetApi(naam:String){

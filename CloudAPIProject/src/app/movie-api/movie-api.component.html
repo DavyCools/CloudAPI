@@ -6,6 +6,11 @@
   <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)" (onSelect)="Choice($event)"></p-autoComplete>
   <p *ngIf="error">{{error}}</p>
 </div>
-<body *ngIf="this.data">
-  
+<body *ngIf="apiService.film">
+  <div *ngIf="apiService.film.Search">
+      <h2>{{apiService.film.Search[0].Title}}</h2>
+      <p *ngIf="apiService.film.Search[0].Type == 'movie'">De film is uitgebracht in het jaar {{apiService.film.Search[0].Year}}.</p>
+      <p *ngIf="apiService.film.Search[0].Type == 'series'">De serie is uitgebracht in het jaar {{apiService.film.Search[0].Year}}.</p>
+      <img *ngIf="apiService.film.Search[0].Poster" [src]="apiService.film.Search[0].Poster">
+  </div>
 </body>

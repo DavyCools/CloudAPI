@@ -12,14 +12,14 @@ export class MovieAPIComponent implements OnInit {
   constructor(private apiService: MovieService) { }
 
   ngOnInit() {
-    this.text = "test"
+    if(this.apiService.film)
+      this.text = this.apiService.film.Search[0].Title;
   }
 
-  text: string;
+  text: string = "";
   results: string[];
   data: Movie;
   error: string;
-  test: Movie;
   search(event) {
       this.apiService.GetApi(event.query).subscribe( uitkomst =>{
         this.data = uitkomst;
@@ -38,10 +38,14 @@ export class MovieAPIComponent implements OnInit {
       })
   }
   Choice(event){
-    console.log(event);
+    //console.log(event);
     this.apiService.GetApi(String(event)).subscribe( uitkomst =>{
-      this.test = uitkomst;  
+      this.apiService.film = uitkomst;  
+      console.log(this.apiService.film)
+      if(this.apiService.film.Response == "False"){
+        this.error=this.apiService.film.Error;
+      }
     })
-    console.log(this.test);
+    
   } 
 } 
