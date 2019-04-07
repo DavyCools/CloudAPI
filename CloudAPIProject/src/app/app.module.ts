@@ -5,8 +5,10 @@ import {FormsModule} from '@angular/forms';
 
 
 import {ToolbarModule} from 'primeng/toolbar';
-import {ButtonModule, Button} from 'primeng/button';
+import {ButtonModule} from 'primeng/button';
 import {AutoCompleteModule} from 'primeng/autocomplete';
+import { HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
@@ -38,7 +40,9 @@ import { MovieService } from './Common/movie.service';
     ToolbarModule,
     ButtonModule,
     AutoCompleteModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     MovieService

@@ -3,8 +3,9 @@
   Zoek een film naar keuzen!
 </h1>
 <div>
-  <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+  <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)" (onSelect)="Choice($event)"></p-autoComplete>
+  <p *ngIf="error">{{error}}</p>
 </div>
-<body>
-
+<body *ngIf="this.data">
+  
 </body>
