@@ -58,11 +58,13 @@ export class MovieAPIComponent implements OnInit {
     this.randomwaarde = s;
     //console.log(this.randomwaarde);
     this.apiService.GetMovieByID(this.randomwaarde).subscribe( uitkomst =>{
-      this.apiService.randomFilm = uitkomst;
-      if(!this.apiService.randomFilm.Poster.includes("https")){
-        this.apiService.randomFilm.Poster= "assets/img/NoImageAvailable.png"
-      }  
-      //console.log(this.apiService.randomFilm);
+      if(uitkomst.Response == "True"){
+        this.apiService.randomFilm = uitkomst;
+        if(!this.apiService.randomFilm.Poster.includes("https")){
+          this.apiService.randomFilm.Poster= "assets/img/NoImageAvailable.png"
+        }  
+        //console.log(this.apiService.randomFilm);
+      }
     })
   }
 } 

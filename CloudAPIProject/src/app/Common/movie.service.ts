@@ -11,14 +11,26 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   public GetApi(naam:String){
-    return this.http.get<Movie>(`http://www.omdbapi.com/?apikey=39878d5a&page=1&s=${naam}`)
+    //DEFAULT KEY
+    //return this.http.get<Movie>(`http://www.omdbapi.com/?apikey=39878d5a&page=1&s=${naam}`)
+
+
     //return this.http.get<Movie>("http://www.omdbapi.com/?apikey=39878d5a&page=1&s=Batman")
+
+    //BACKUP KEY IF LIMIT REACHED
+    return this.http.get<Movie>(`http://www.omdbapi.com/?apikey=8193da63&page=1&s=${naam}`)
   }
   public GetMovieByID(id:String){
-    return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=39878d5a&i=tt${id}`)
+    //DEFAULT KEY
+    //return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=39878d5a&i=tt${id}`)
+
+
     //return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=39878d5a&page=1&i=tt0372784`)
-    //Met de lange plot erbij:
+    //Met de lange plot (descriptie) erbij:
     //return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=39878d5a&i=tt${id}&plot=full`)
+
+    //BACKUP KEY IF LIMIT REACHED
+    return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=8193da63&i=tt${id}`)
   }
 }
 
@@ -71,4 +83,5 @@ export interface MovieInfo {
   Production: string;
   Website: string;
   Response: string;
+  Error: string;
 }
