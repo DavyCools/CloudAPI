@@ -12,8 +12,15 @@ export class MovieAPIComponent implements OnInit {
   constructor(private apiService: MovieService) { }
 
   ngOnInit() {
-    if(this.apiService.film)
-      this.text = this.apiService.film.Search[0].Title;
+    if(this.apiService.gekozenFilm){
+      this.text = this.apiService.gekozenFilm.Title;
+      if(this.apiService.gekozenFilm.Ratings[0])
+        this.rating1 = Number(this.apiService.gekozenFilm.Ratings[0].Value.substring(0,3))/2;
+      if(this.apiService.gekozenFilm.Ratings[1])
+        this.rating2 = Number(this.apiService.gekozenFilm.Ratings[1].Value.substring(0,2))/20;
+      if(this.apiService.gekozenFilm.Ratings[2])
+        this.rating3 = Number(this.apiService.gekozenFilm.Ratings[2].Value.substring(0,2))/20;
+    }
   }
 
   text: string = "";
@@ -55,9 +62,15 @@ export class MovieAPIComponent implements OnInit {
             this.apiService.gekozenFilm.Poster = "assets/img/NoImageAvailable.png"
           }  
           console.log(this.apiService.gekozenFilm);
-          this.rating1 = Number(this.apiService.gekozenFilm.Ratings[0].Value.substring(0,3))/2;
-          this.rating2 = Number(this.apiService.gekozenFilm.Ratings[1].Value.substring(0,2))/20;
-          this.rating3 = Number(this.apiService.gekozenFilm.Ratings[2].Value.substring(0,2))/20;
+          this.rating1 = null;
+          this.rating2 = null;
+          this.rating3 = null;
+          if(this.apiService.gekozenFilm.Ratings[0])
+            this.rating1 = Number(this.apiService.gekozenFilm.Ratings[0].Value.substring(0,3))/2;
+          if(this.apiService.gekozenFilm.Ratings[1])
+            this.rating2 = Number(this.apiService.gekozenFilm.Ratings[1].Value.substring(0,2))/20;
+          if(this.apiService.gekozenFilm.Ratings[2])
+            this.rating3 = Number(this.apiService.gekozenFilm.Ratings[2].Value.substring(0,2))/20;
         })
       }
     })
