@@ -32,6 +32,18 @@
             <strong>BoxOffice: </strong>{{apiService.gekozenFilm.BoxOffice}}
           </p>
           More info: <a href="{{apiService.gekozenFilm.Website}}">{{apiService.gekozenFilm.Website}}</a>
+          <h3>~~~~ Ratings ~~~~</h3>
+          <p>
+            <strong>{{apiService.gekozenFilm.Ratings[0].Source}}</strong> - {{rating1}}/5<br>
+            <p-rating [ngModel]="rating1 | number:'1.0-0'" [readonly]="true" [cancel]="false"></p-rating><br>
+            <strong>{{apiService.gekozenFilm.Ratings[1].Source}}</strong> - {{rating2}}/5<br>
+            <p-rating [ngModel]="rating2 | number:'1.0-0'" [readonly]="true" [cancel]="false"></p-rating><br>
+            <strong>{{apiService.gekozenFilm.Ratings[2].Source}}</strong> - {{rating3}}/5<br>
+            <p-rating [ngModel]="rating3 | number:'1.0-0'" [readonly]="true" [cancel]="false"></p-rating><br>
+            <strong>imdbRating</strong> - {{apiService.gekozenFilm.imdbRating}}/10<br>
+            <p-rating stars="10" [ngModel]="apiService.gekozenFilm.imdbRating | number:'1.0-0'" [readonly]="true" [cancel]="false"></p-rating>
+            <strong>Number of Votes: </strong>{{apiService.gekozenFilm.imdbVotes}}<br>
+          </p>
         </div>
 
 

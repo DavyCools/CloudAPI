@@ -37,6 +37,9 @@ export class MovieAPIComponent implements OnInit {
         }
       })
   }
+  rating1:number;
+  rating2:number;
+  rating3:number;
   Choice(event){
     //console.log(event);
     this.apiService.GetApi(String(event)).subscribe( uitkomst =>{
@@ -52,6 +55,9 @@ export class MovieAPIComponent implements OnInit {
             this.apiService.gekozenFilm.Poster = "assets/img/NoImageAvailable.png"
           }  
           console.log(this.apiService.gekozenFilm);
+          this.rating1 = Number(this.apiService.gekozenFilm.Ratings[0].Value.substring(0,3))/2;
+          this.rating2 = Number(this.apiService.gekozenFilm.Ratings[1].Value.substring(0,2))/20;
+          this.rating3 = Number(this.apiService.gekozenFilm.Ratings[2].Value.substring(0,2))/20;
         })
       }
     })

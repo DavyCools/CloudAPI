@@ -9,6 +9,7 @@ import {ButtonModule} from 'primeng/button';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import { HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RatingModule} from 'primeng/rating';
 
 
 import { AppComponent } from './app.component';
@@ -42,7 +43,8 @@ import { MovieService } from './Common/movie.service';
     AutoCompleteModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RatingModule
   ],
   providers: [
     MovieService
