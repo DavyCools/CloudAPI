@@ -45,6 +45,15 @@ export class MovieAPIComponent implements OnInit {
       if(this.apiService.film.Response == "False"){
         this.error=this.apiService.film.Error;
       }
+      else{
+        this.apiService.GetMovieByID(this.apiService.film.Search[0].imdbID).subscribe( uitkomst =>{
+          this.apiService.gekozenFilm = uitkomst;
+          if(!this.apiService.gekozenFilm.Poster.includes("https")){
+            this.apiService.gekozenFilm.Poster = "assets/img/NoImageAvailable.png"
+          }  
+          console.log(this.apiService.gekozenFilm);
+        })
+      }
     })
   } 
 
@@ -57,11 +66,11 @@ export class MovieAPIComponent implements OnInit {
     while (s.length < 7) s = "0" + s;
     this.randomwaarde = s;
     //console.log(this.randomwaarde);
-    this.apiService.GetMovieByID(this.randomwaarde).subscribe( uitkomst =>{
+    this.apiService.GetMovieByID("tt"+this.randomwaarde).subscribe( uitkomst =>{
       if(uitkomst.Response == "True"){
         this.apiService.randomFilm = uitkomst;
         if(!this.apiService.randomFilm.Poster.includes("https")){
-          this.apiService.randomFilm.Poster= "assets/img/NoImageAvailable.png"
+          this.apiService.randomFilm.Poster = "assets/img/NoImageAvailable.png"
         }  
         //console.log(this.apiService.randomFilm);
       }

@@ -4,16 +4,41 @@
       <h1>Zoek een film/serie naar keuzen!</h1>
       <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)" (onSelect)="Choice($event)"></p-autoComplete>
       <p *ngIf="error">{{error}}</p>
-      <div *ngIf="apiService.film">
+      <!-- <div *ngIf="apiService.film">
           <div *ngIf="apiService.film.Search">
               <h2>{{apiService.film.Search[0].Title}}</h2>
               <p *ngIf="apiService.film.Search[0].Type == 'movie'">De film is uitgebracht in het jaar {{apiService.film.Search[0].Year}}.</p>
               <p *ngIf="apiService.film.Search[0].Type == 'series'">De serie is uitgebracht in het jaar {{apiService.film.Search[0].Year}}.</p>
               <img *ngIf="apiService.film.Search[0].Poster" [src]="apiService.film.Search[0].Poster">
           </div>
-      </div>
+      </div> -->
+
+      <div *ngIf="apiService.gekozenFilm">
+          <h2>{{apiService.gekozenFilm.Title}}</h2>
+          <img *ngIf="apiService.gekozenFilm.Poster" [src]="apiService.gekozenFilm.Poster"><br>
+          <p class="description">{{apiService.gekozenFilm.Plot}}</p>
+          <p>
+            <strong>Type: </strong>{{apiService.gekozenFilm.Type}}<br>
+            <strong>Released: </strong>{{apiService.gekozenFilm.Released}}<br>
+            <strong>Released on DVD: </strong>{{apiService.gekozenFilm.DVD}}<br>
+            <strong>Duration: </strong>{{apiService.gekozenFilm.Runtime}}<br>
+            <strong>Genre: </strong>{{apiService.gekozenFilm.Genre}}<br>
+            <strong>Production: </strong>{{apiService.gekozenFilm.Production}}<br>
+            <strong>Director: </strong>{{apiService.gekozenFilm.Director}}<br>
+            <strong>Actors: </strong>{{apiService.gekozenFilm.Actors}}<br>
+            <strong>Spoken Language: </strong>{{apiService.gekozenFilm.Language}}<br>
+            <strong>Country: </strong>{{apiService.gekozenFilm.Country}}<br>
+            <strong>Awards: </strong>{{apiService.gekozenFilm.Awards}}<br>
+            <strong>BoxOffice: </strong>{{apiService.gekozenFilm.BoxOffice}}
+          </p>
+          More info: <a href="{{apiService.gekozenFilm.Website}}">{{apiService.gekozenFilm.Website}}</a>
+        </div>
+
+
   </section>
-  
+  <section>
+    
+  </section>
   <section>
       <h1>Zoek een random film/serie</h1>
       <button (click)="RandomMovie()">Random movie/episode/serie</button>

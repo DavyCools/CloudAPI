@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class MovieService {
   
   film: Movie;
+  gekozenFilm: MovieInfo;
   randomFilm: MovieInfo;
   constructor(private http: HttpClient) { }
 
@@ -22,15 +23,15 @@ export class MovieService {
   }
   public GetMovieByID(id:String){
     //DEFAULT KEY
-    //return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=39878d5a&i=tt${id}`)
+    //return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=39878d5a&i=${id}`)
 
 
-    //return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=39878d5a&page=1&i=tt0372784`)
+    //return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=39878d5a&page=1&i=0372784`)
     //Met de lange plot (descriptie) erbij:
-    //return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=39878d5a&i=tt${id}&plot=full`)
+    //return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=39878d5a&i=${id}&plot=full`)
 
     //BACKUP KEY IF LIMIT REACHED
-    return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=8193da63&i=tt${id}`)
+    return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=8193da63&i=${id}`)
   }
 }
 
