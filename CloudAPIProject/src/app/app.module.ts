@@ -19,6 +19,7 @@ import { OwnAPIComponent } from './own-api/own-api.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MovieService } from './Common/movie.service';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MovieService } from './Common/movie.service';
     MovieAPIComponent,
     OwnAPIComponent,
     PageNotFoundComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { MovieService } from './Common/movie.service';
       {path:"home", component: HomeComponent},
       {path:"MovieAPI", component: MovieAPIComponent},
       {path:"OwnAPI", component: OwnAPIComponent},
+      {path:"Settings", component: SettingsComponent},
       {path: "", redirectTo: "home", pathMatch:"full" },
       {path: "**", component: PageNotFoundComponent}
     ]),
