@@ -9,9 +9,10 @@ export class MovieService {
   film: Movie;
   gekozenFilm: MovieInfo;
   randomFilm: MovieInfo;
+  keuzeAantalFilms:number = 10;
   constructor(private http: HttpClient) { }
 
-  public GetApi(naam:String){
+  public GetApi(naam:String, page:number=1){
     //DEFAULT KEY
     //return this.http.get<Movie>(`http://www.omdbapi.com/?apikey=39878d5a&page=1&s=${naam}`)
 
@@ -19,7 +20,7 @@ export class MovieService {
     //return this.http.get<Movie>("http://www.omdbapi.com/?apikey=39878d5a&page=1&s=Batman")
 
     //BACKUP KEY IF LIMIT REACHED
-    return this.http.get<Movie>(`http://www.omdbapi.com/?apikey=8193da63&page=1&s=${naam}`)
+    return this.http.get<Movie>(`http://www.omdbapi.com/?apikey=8193da63&page=${page}&s=${naam}`)
   }
   public GetMovieByID(id:String){
     //DEFAULT KEY

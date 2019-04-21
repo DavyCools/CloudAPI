@@ -27,21 +27,38 @@ export class MovieAPIComponent implements OnInit {
   results: string[];
   data: Movie;
   error: string;
+  totalresults: number;
   search(event) {
       this.apiService.GetApi(event.query).subscribe( uitkomst =>{
         this.data = uitkomst;
         this.results = [];
         this.error = "";
+        this.totalresults = 0;
         //console.log(this.data);
         if(this.data.Response == "True"){
+          this.totalresults = Number(this.data.totalResults);
           for(var i=0;i<this.data.Search.length;i++) {
             this.results.push(this.data.Search[i].Title);
             //console.log(this.data.Search[i].Title);
           }
+          
+          if(this.totalresults > 10 && this.apiService.keuzeAantalFilms > 10){
+            for(var j=2;j<=this.totalresults/10;j++){
+              this.apiService.GetApi(event.query,j).subscribe( uitkomst =>{
+                this.data = uitkomst;
+                if(this.data.Response == "True"){
+                  for(var i=0;i<this.data.Search.length;i++) {
+                    this.results.push(this.data.Search[i].Title);
+                  }
+                }
+              })
+              if(j == this.apiService.keuzeAantalFilms/10) j = this.totalresults + 1;
+            }
+          }
         }
         else{
-            this.error=this.data.Error;
-        }
+          this.error=this.data.Error;
+        } 
       })
   }
   rating1:number;
@@ -51,7 +68,7 @@ export class MovieAPIComponent implements OnInit {
     //console.log(event);
     this.apiService.GetApi(String(event)).subscribe( uitkomst =>{
       this.apiService.film = uitkomst;  
-      console.log(this.apiService.film)
+      //console.log(this.apiService.film)
       if(this.apiService.film.Response == "False"){
         this.error=this.apiService.film.Error;
       }
@@ -61,7 +78,7 @@ export class MovieAPIComponent implements OnInit {
           if(!this.apiService.gekozenFilm.Poster.includes("https")){
             this.apiService.gekozenFilm.Poster = "assets/img/NoImageAvailable.png"
           }  
-          console.log(this.apiService.gekozenFilm);
+          //console.log(this.apiService.gekozenFilm);
           this.rating1 = null;
           this.rating2 = null;
           this.rating3 = null;

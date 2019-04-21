@@ -12,6 +12,5 @@ export class SettingsComponent implements OnInit {
 
   ngOnInit() {
   }
-  keuzeAantalFilms = 10;
-  lijstKeuzens = [10,20,30,40,50,60,70,80,90,100,150,200,250,500,1000];
+  lijstKeuzens = [10,20,30,40,50,60,70,80,90,100];
 }
