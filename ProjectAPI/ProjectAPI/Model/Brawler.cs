@@ -16,5 +16,7 @@ namespace ProjectAPI.Model
         public string Attack { get; set; }
         public string Super { get; set; }
         public string StarPower { get; set; }
+        public string Picture { get; set; }
+        public int Health { get; set; }
     }
 }
