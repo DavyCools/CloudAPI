@@ -4,13 +4,16 @@
     <p-accordion>
       <p-accordionTab header="Search a brawler" [selected]="true">
         <strong>Search by Id:&nbsp;&nbsp;</strong>        
-        <p-spinner size="15" [(ngModel)]="id" [min]="1" type="number"></p-spinner><br><br>
-        
+        <p-spinner size="12" [(ngModel)]="id" [min]="1" type="number"></p-spinner>&nbsp;&nbsp;
+        <button label="Search" pButton type="button" class="ui-button-raised ui-button-rounded ui-button-info" (click)="GetBrawlerFromAPI()"></button><br><br>
         <strong>Search by Name:&nbsp;&nbsp;</strong>        
-        <input [(ngModel)]="name" placeholder="Shelly"><br><br>
-
+        <input [(ngModel)]="name" placeholder="Shelly">&nbsp;&nbsp;
+        <button label="Search" pButton type="button" class="ui-button-raised ui-button-rounded ui-button-info" (click)="GetBrawlerWithoutIDFromAPI(1)"></button><br><br>
         <strong>Search by Health:&nbsp;&nbsp;</strong>        
-        <p-spinner size="15" [(ngModel)]="health" [min]="0" type="number"></p-spinner><br><br>
+        <p-spinner size="12" [(ngModel)]="health" [min]="0" type="number" placeholder="0"></p-spinner>&nbsp;&nbsp;
+        <button label="Search" pButton type="button" class="ui-button-raised ui-button-rounded ui-button-info" (click)="GetBrawlerWithoutIDFromAPI(2)"></button><br><br>
+        <p-messages [(value)]="errorGet"></p-messages>
+        <p-messages [(value)]="successGet"></p-messages>
       </p-accordionTab>
       <p-accordionTab header="Add a brawler">
         <strong>Name of Brawler:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.name" placeholder="Shelly"><br><br>
@@ -53,8 +56,17 @@
 
   <section></section>
 
-  <section>
-    
+  <section *ngIf="brawler" class="infoBrawler">
+    <h2>{{brawler.name}}</h2>
+    <img src="{{brawler.picture}}">
+    <div>
+      <p style="color:green;"><strong>Health: </strong>{{brawler.health}}</p>
+      <p style="color:rgb(228, 18, 18);" ><strong>Rarity: </strong>{{brawler.rarity}}</p>
+      <p style="color:rgb(199, 153, 2);" ><strong>Type: </strong>{{brawler.type}}</p>
+      <p style="color:rgb(0, 113, 206);" ><strong>Normal Attack: </strong>{{brawler.attack}}</p>
+      <p style="color:rgb(250, 69, 250);" ><strong>Special Attack: </strong>{{brawler.super}}</p>
+      <p style="color:rgb(160, 0, 160);" ><strong>Ultra Power Attack: </strong>{{brawler.starPower}}</p>
+    </div>
   </section>
 </body>
 <section *ngIf="brawlers" class="MultipleBrawlers">

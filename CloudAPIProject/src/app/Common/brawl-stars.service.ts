@@ -11,6 +11,9 @@ export class BrawlStarsService {
   public GetBrawlers(filter: string){
     return this.http.get<Brawler[]>(`https://localhost:44310/api/Brawlers?${filter}`);
   }
+  public GetBrawler(id: number){
+    return this.http.get<Brawler>(`https://localhost:44310/api/Brawlers/${id}`);
+  }
   public AddBrawler(body: Brawler){
     return this.http.post<Brawler>(`https://localhost:44310/api/Brawlers`,body,)
   }
