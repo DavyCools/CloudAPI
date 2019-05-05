@@ -1,4 +1,65 @@
 <router-outlet></router-outlet>
-<p>
-  own-api works!
-</p>
+<body>
+  <section>
+    <p-accordion>
+      <p-accordionTab header="Search a brawler" [selected]="true">
+        <strong>Search by Id:&nbsp;&nbsp;</strong>        
+        <p-spinner size="15" [(ngModel)]="id" [min]="1" type="number"></p-spinner><br><br>
+        
+        <strong>Search by Name:&nbsp;&nbsp;</strong>        
+        <input [(ngModel)]="name" placeholder="Shelly"><br><br>
+
+        <strong>Search by Health:&nbsp;&nbsp;</strong>        
+        <p-spinner size="15" [(ngModel)]="health" [min]="0" type="number"></p-spinner><br><br>
+      </p-accordionTab>
+      <p-accordionTab header="Add a brawler">
+        <strong>Name of Brawler:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.name" placeholder="Shelly"><br><br>
+        <strong>Rarity:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.rarity" placeholder="Rare"><br><br>
+        <strong>Type:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.type" placeholder="Fighter"><br><br>
+        <strong>Attack:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.attack"><br><br>
+        <strong>Super:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.super"><br><br>
+        <strong>StarPower:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.starPower"><br><br>
+        <strong>Picture:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.picture" placeholder="https://vignette.wikia.nocookie.net/brawlstars/images/5"><br><br>
+        <strong>Health:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.health" placeholder="550" type="number"><br><br>
+        <button label="Add" pButton type="button" class="ui-button-raised ui-button-rounded ui-button-success" icon="pi pi-user-plus" (click)="AddBrawlerFromAPI()"></button><br><br>
+        <p-messages [(value)]="errorAdd"></p-messages>
+        <p-messages [(value)]="successAdd"></p-messages>
+      </p-accordionTab>
+      <p-accordionTab header="Remove a brawler">
+        <strong>Remove by Id:&nbsp;&nbsp;</strong>        
+        <p-spinner size="15" [(ngModel)]="idRemove" [min]="0" type="number"></p-spinner>&nbsp;&nbsp; 
+        <button label="Remove" pButton type="button" class="ui-button-raised ui-button-rounded ui-button-danger" icon="pi pi-user-minus" (click)="RemoveBrawlerFromAPI()"></button><br><br>
+        <p-messages [(value)]="errorRemove"></p-messages>
+        <p-messages [(value)]="successRemove"></p-messages>
+      </p-accordionTab>
+      <p-accordionTab header="Show brawlers">
+        <strong>Filter by:</strong>&nbsp;&nbsp;<p-selectButton [options]="options" [(ngModel)]="optionSelected" (onOptionClick)="SearchFilter($event)"></p-selectButton><br><br>
+        <div>
+          <strong>Filter by Rarity:&nbsp;&nbsp;</strong>
+          <select name="" id="" [(ngModel)]="rarity" (ngModelChange)="SearchRarity()">
+            <option *ngFor="let item of lijstRarity" value="{{item}}">{{item}}</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <strong>Filter by Type:&nbsp;&nbsp;</strong>
+          <select name="" id="" [(ngModel)]="type" (ngModelChange)="SearchType()">
+            <option *ngFor="let item of lijstType" value="{{item}}">{{item}}</option>
+          </select>
+        </div>
+      </p-accordionTab>
+  </p-accordion>
+  </section>
+
+  <section></section>
+
+  <section>
+    
+  </section>
+</body>
+<section *ngIf="brawlers" class="MultipleBrawlers">
+  <div *ngFor="let item of brawlers">
+    <h2>{{item.name}}</h2>
+    <img src="{{item.picture}}"><br>
+  </div>
+</section>

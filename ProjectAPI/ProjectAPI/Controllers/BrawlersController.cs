@@ -24,13 +24,17 @@ namespace ProjectAPI.Controllers
         }*/
 
         [HttpGet]
-        public List<Brawler> GetBooksParam(string name, int? noHealth,
+        public List<Brawler> GetBooksParam(string name, int? noHealth, string rarity, string type,
                                 string sortBy, string direction = "asc",
                                 int pageSize = 5, int pageNumber = 0)
         {
             IQueryable<Brawler> query = context.Brawlers;
             if (!string.IsNullOrEmpty(name))
                 query = query.Where(b => b.Name == name);
+            if (!string.IsNullOrEmpty(rarity))
+                query = query.Where(b => b.Rarity == rarity);
+            if(!string.IsNullOrEmpty(type))
+                query = query.Where(b => b.Type == type);
             if (noHealth != null)
                 query = query.Where(b => b.Health == noHealth);
 

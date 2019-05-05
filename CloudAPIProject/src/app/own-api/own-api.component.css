@@ -1,0 +1,28 @@
+body{
+    display: grid;
+    grid-template-columns: 49% 2% 49%;
+}
+input{
+    height: 30px;
+    border-radius: 5px;
+}
+select{
+    height: 25px;
+    border-radius: 5px;
+}
+p-inputSwitch{
+    margin-left: 15px;
+}
+.MultipleBrawlers{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+h2{
+    text-align: center;
+    color: blue;
+}
+img{
+    max-width: 150px;
+    max-height: 200px;
+}
