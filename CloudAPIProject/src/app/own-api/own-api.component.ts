@@ -37,12 +37,14 @@ export class OwnAPIComponent implements OnInit {
   }
   SearchRarity(){
     if(this.optionSelected == "1"){
+      this.apiService.pageNumber = 0;
       this.keuze = `rarity=${this.rarity}`;
       this.GetBrawlersFromAPI();
     }
   }
   SearchType(){
     if(this.optionSelected == "2"){
+      this.apiService.pageNumber = 0;
       this.keuze = `type=${this.type}`;
       this.GetBrawlersFromAPI();
     }
@@ -53,6 +55,18 @@ export class OwnAPIComponent implements OnInit {
         this.apiService.brawlers = uitkomst;
       }
     })
+  }
+  PreviousPage(){
+    if(this.apiService.pageNumber > 0){
+      this.apiService.pageNumber--;
+      this.GetBrawlersFromAPI();
+    }
+  }
+  NextPage(){
+    if(this.apiService.brawlers[this.apiService.pageSize-1]){
+      this.apiService.pageNumber++;
+      this.GetBrawlersFromAPI();
+    }
   }
   name:string = "";
   health:number = null;

@@ -1,22 +1,22 @@
 <section>
   <div>
     <h1>Movie API</h1>
-    <p>Hoeveel resultaten moeten er getoond worden bij het zoeken?</p>
+    <p>How many results must there be shown when searching?</p>
     <select name="" id="" [(ngModel)]="apiService.keuzeAantalFilms">
-      <option *ngFor="let item of lijstKeuzens" value="{{item}}">{{item}} films</option>
+      <option *ngFor="let item of lijstKeuzens" value="{{item}}">{{item}} movies</option>
     </select>
   </div>
   <div>
       <h1>Brawl Stars API</h1>
-      <p>Hoeveel resultaten moeten er gezocht worden per pagina?</p>
-      <select name="" id="" [(ngModel)]="apiServiceBrawlStars.keuzePageSize">
+      <p>How many results need to be shown each page?</p>
+      <select name="" id="" [(ngModel)]="apiServiceBrawlStars.pageSize">
         <option *ngFor="let item of lijstPaginanummer" value="{{item}}">{{item}} brawlers</option>
       </select>
-      <p>Op welk atribut moet er worden gesorteerd?</p>
+      <p>on which attribute should we sort?</p>
       <select name="" id="" [(ngModel)]="apiServiceBrawlStars.keuzeSoryBy">
           <option *ngFor="let item of lijstsoryBy" value="{{item}}">{{item}}</option>
       </select>
-      <p>Moet dit ascending or descending?</p>
+      <p>Do you want to sort ascending or descending?</p>
       <select name="" id="" [(ngModel)]="apiServiceBrawlStars.keuzeRichting">
           <option *ngFor="let item of lijstRichting" value="{{item}}">{{item}}</option>
       </select>

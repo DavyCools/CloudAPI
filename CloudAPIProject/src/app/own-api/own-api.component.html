@@ -50,6 +50,11 @@
             <option *ngFor="let item of lijstType" value="{{item}}">{{item}}</option>
           </select>
         </div>
+        <br>
+        <button style="display:inline-block;" label="Previous Page" pButton type="button" class="ui-button-raised ui-button-rounded ui-button-info" (click)="PreviousPage()"></button>&nbsp;&nbsp;
+        <p style="display:inline-block;" ><strong>Current Page: {{apiService.pageNumber}}</strong></p>&nbsp;&nbsp;
+        <button style="display:inline-block;" label="Next Page" pButton type="button" class="ui-button-raised ui-button-rounded ui-button-info" (click)="NextPage()"></button>
+        <br><br>
       </p-accordionTab>
   </p-accordion>
   </section>

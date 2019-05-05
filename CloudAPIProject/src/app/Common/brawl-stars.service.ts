@@ -6,7 +6,8 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 })
 export class BrawlStarsService {
 
-  keuzePageSize: number = 5;
+  pageSize: number = 5;
+  pageNumber: number = 0;
   keuzeSoryBy: string = "id";
   keuzeRichting: string = "asc";
   brawler: Brawler;
@@ -16,7 +17,7 @@ export class BrawlStarsService {
   constructor(private http: HttpClient) { }
 
   public GetBrawlers(filter: string){
-    return this.http.get<Brawler[]>(`https://localhost:44310/api/Brawlers?${filter}&pageSize=${this.keuzePageSize}&sortBy=${this.keuzeSoryBy}&direction=${this.keuzeRichting}`);
+    return this.http.get<Brawler[]>(`https://localhost:44310/api/Brawlers?${filter}&pageSize=${this.pageSize}&sortBy=${this.keuzeSoryBy}&direction=${this.keuzeRichting}&pageNumber=${this.pageNumber}`);
   }
   public GetBrawler(id: number){
     return this.http.get<Brawler>(`https://localhost:44310/api/Brawlers/${id}`);

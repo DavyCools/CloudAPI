@@ -1,7 +1,7 @@
 <router-outlet></router-outlet>
 <body>
   <section>
-      <h1>Zoek een film/serie naar keuzen!</h1>
+      <h1>Search a movie/serie of your choice!</h1>
       <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)" (onSelect)="Choice($event)"></p-autoComplete>
       <p *ngIf="error">{{error}}</p>
       <!-- <div *ngIf="apiService.film">
@@ -52,7 +52,7 @@
     
   </section>
   <section>
-      <h1>Zoek een random film/serie</h1>
+      <h1>Search a random movie/serie</h1>
       <button (click)="RandomMovie()">Random movie/episode/serie</button>
       <div *ngIf="apiService.randomFilm">
         <h2>{{apiService.randomFilm.Title}}</h2>
