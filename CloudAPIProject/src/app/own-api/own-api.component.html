@@ -16,14 +16,14 @@
         <p-messages [(value)]="successGet"></p-messages>
       </p-accordionTab>
       <p-accordionTab header="Add a brawler">
-        <strong>Name of Brawler:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.name" placeholder="Shelly"><br><br>
-        <strong>Rarity:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.rarity" placeholder="Rare"><br><br>
-        <strong>Type:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.type" placeholder="Fighter"><br><br>
-        <strong>Attack:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.attack"><br><br>
-        <strong>Super:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.super"><br><br>
-        <strong>StarPower:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.starPower"><br><br>
-        <strong>Picture:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.picture" placeholder="https://vignette.wikia.nocookie.net/brawlstars/images/5"><br><br>
-        <strong>Health:&nbsp;&nbsp;</strong> <input [(ngModel)]="brawlerAdd.health" placeholder="550" type="number"><br><br>
+        <strong>Name of Brawler:&nbsp;&nbsp;</strong> <input [(ngModel)]="apiService.brawlerAdd.name" placeholder="Shelly"><br><br>
+        <strong>Rarity:&nbsp;&nbsp;</strong> <input [(ngModel)]="apiService.brawlerAdd.rarity" placeholder="Rare"><br><br>
+        <strong>Type:&nbsp;&nbsp;</strong> <input [(ngModel)]="apiService.brawlerAdd.type" placeholder="Fighter"><br><br>
+        <strong>Attack:&nbsp;&nbsp;</strong> <input [(ngModel)]="apiService.brawlerAdd.attack"><br><br>
+        <strong>Super:&nbsp;&nbsp;</strong> <input [(ngModel)]="apiService.brawlerAdd.super"><br><br>
+        <strong>StarPower:&nbsp;&nbsp;</strong> <input [(ngModel)]="apiService.brawlerAdd.starPower"><br><br>
+        <strong>Picture:&nbsp;&nbsp;</strong> <input [(ngModel)]="apiService.brawlerAdd.picture" placeholder="https://vignette.wikia.nocookie.net/brawlstars/images/5"><br><br>
+        <strong>Health:&nbsp;&nbsp;</strong> <input [(ngModel)]="apiService.brawlerAdd.health" placeholder="550" type="number"><br><br>
         <button label="Add" pButton type="button" class="ui-button-raised ui-button-rounded ui-button-success" icon="pi pi-user-plus" (click)="AddBrawlerFromAPI()"></button><br><br>
         <p-messages [(value)]="errorAdd"></p-messages>
         <p-messages [(value)]="successAdd"></p-messages>
@@ -56,21 +56,21 @@
 
   <section></section>
 
-  <section *ngIf="brawler" class="infoBrawler">
-    <h2>{{brawler.name}}</h2>
-    <img src="{{brawler.picture}}">
+  <section *ngIf="apiService.brawler" class="infoBrawler">
+    <h2>{{apiService.brawler.name}}</h2>
+    <img src="{{apiService.brawler.picture}}">
     <div>
-      <p style="color:green;"><strong>Health: </strong>{{brawler.health}}</p>
-      <p style="color:rgb(228, 18, 18);" ><strong>Rarity: </strong>{{brawler.rarity}}</p>
-      <p style="color:rgb(199, 153, 2);" ><strong>Type: </strong>{{brawler.type}}</p>
-      <p style="color:rgb(0, 113, 206);" ><strong>Normal Attack: </strong>{{brawler.attack}}</p>
-      <p style="color:rgb(250, 69, 250);" ><strong>Special Attack: </strong>{{brawler.super}}</p>
-      <p style="color:rgb(160, 0, 160);" ><strong>Ultra Power Attack: </strong>{{brawler.starPower}}</p>
+      <p style="color:green;"><strong>Health: </strong>{{apiService.brawler.health}}</p>
+      <p style="color:rgb(228, 18, 18);" ><strong>Rarity: </strong>{{apiService.brawler.rarity}}</p>
+      <p style="color:rgb(199, 153, 2);" ><strong>Type: </strong>{{apiService.brawler.type}}</p>
+      <p style="color:rgb(0, 113, 206);" ><strong>Normal Attack: </strong>{{apiService.brawler.attack}}</p>
+      <p style="color:rgb(250, 69, 250);" ><strong>Special Attack: </strong>{{apiService.brawler.super}}</p>
+      <p style="color:rgb(160, 0, 160);" ><strong>Ultra Power Attack: </strong>{{apiService.brawler.starPower}}</p>
     </div>
   </section>
 </body>
-<section *ngIf="brawlers" class="MultipleBrawlers">
-  <div *ngFor="let item of brawlers">
+<section *ngIf="apiService.brawlers" class="MultipleBrawlers">
+  <div *ngFor="let item of apiService.brawlers">
     <h2>{{item.name}}</h2>
     <img src="{{item.picture}}"><br>
   </div>

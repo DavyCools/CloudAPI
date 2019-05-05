@@ -50,7 +50,7 @@ export class OwnAPIComponent implements OnInit {
   GetBrawlersFromAPI(){
     this.apiService.GetBrawlers(this.keuze).subscribe( uitkomst =>{
       if(uitkomst){
-        this.brawlers = uitkomst;
+        this.apiService.brawlers = uitkomst;
       }
     })
   }
@@ -64,8 +64,8 @@ export class OwnAPIComponent implements OnInit {
       else if (id == 2) this.name=`noHealth=${this.health}`;
       this.apiService.GetBrawlers(this.name).subscribe( uitkomst =>{
         if(uitkomst && uitkomst[0]){
-          this.brawler = uitkomst[0];
-          this.successGet.push({severity:'success',summary:'Success Message', detail:`Brawler successfully found with id = ${this.brawler.id}`});
+          this.apiService.brawler = uitkomst[0];
+          this.successGet.push({severity:'success',summary:'Success Message', detail:`Brawler successfully found with id = ${this.apiService.brawler.id}`});
         }
         else{
           this.errorGet.push({severity:'error',summary:'Error Message', detail:`Couldn't find brawler or the API isn't responding.`});
@@ -78,14 +78,13 @@ export class OwnAPIComponent implements OnInit {
   }
   errorGet = [];
   successGet = [];
-  brawler: Brawler;
   GetBrawlerFromAPI(){
     this.errorGet = [];
     this.successGet = [];
     this.apiService.GetBrawler(this.id).subscribe(
       (val) => {
         this.successGet.push({severity:'success',summary:'Success Message', detail:`Brawler successfully found with id = ${val.id}`});
-        this.brawler = val;
+        this.apiService.brawler = val;
       },
       response => {
         this.errorGet.push({severity:'error',summary:'Error Message', detail:`Couldn't find brawler or the API isn't responding.`});
@@ -94,14 +93,13 @@ export class OwnAPIComponent implements OnInit {
         //console.log("The GET observable is now completed.");
     });
   }
-  brawlerAdd: Brawler = {name: "",rarity:"",type:"",attack:"",super:"",starPower:"",picture:"",health:null};
   errorAdd = [];
   successAdd = [];
   AddBrawlerFromAPI(){
     this.errorAdd = [];
     this.successAdd = [];
-    if(this.brawlerAdd.name && this.brawlerAdd.rarity && this.brawlerAdd.type && this.brawlerAdd.picture && this.brawlerAdd.health){
-      this.apiService.AddBrawler(this.brawlerAdd).subscribe(data =>{
+    if(this.apiService.brawlerAdd.name && this.apiService.brawlerAdd.rarity && this.apiService.brawlerAdd.type && this.apiService.brawlerAdd.picture && this.apiService.brawlerAdd.health){
+      this.apiService.AddBrawler().subscribe(data =>{
         if(data){
           this.successAdd.push({severity:'success',summary:'Success Message', detail:`Brawler successfully added with id = ${data.id}`});
         }
