@@ -68,6 +68,7 @@ namespace ProjectAPI.Controllers
             }
             query = query.Skip(pageNumber * pageSize);
             if (pageSize > 25) pageSize = 25;
+            if (pageSize <= 0) pageSize = 5;
             query = query.Take(pageSize);
             return query.ToList();
         }
