@@ -24,7 +24,8 @@ namespace ProjectAPI.Model
                         Attack = "Buckshot",
                         Super = "Super Shell",
                         StarPower = "Shell Shock",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/5/5e/Shelly_Skin-Default.png/revision/latest?cb=20181212051920"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/5/5e/Shelly_Skin-Default.png/revision/latest?cb=20181212051920",
+                        Health = 3600
                     },
                     new Brawler()
                     {
@@ -34,7 +35,8 @@ namespace ProjectAPI.Model
                         Attack = "Rupture",
                         Super = "Overbearing",
                         StarPower = "Bear With Me",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/3/36/Nita_Skin-Default.png/revision/latest?cb=20181212051918"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/3/36/Nita_Skin-Default.png/revision/latest?cb=20181212051918",
+                        Health = 3800
                     },
                     new Brawler()
                     {
@@ -44,7 +46,8 @@ namespace ProjectAPI.Model
                         Attack = "Six-Shooters",
                         Super = "Bullet Storm",
                         StarPower = "Slick Boots",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/8/8a/Colt_Skin-Default.png/revision/latest?cb=20190129073952"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/8/8a/Colt_Skin-Default.png/revision/latest?cb=20190129073952",
+                        Health = 2800
                     },
                     new Brawler()
                     {
@@ -54,7 +57,8 @@ namespace ProjectAPI.Model
                         Attack = "Double-Barrel",
                         Super = "Bulldozer",
                         StarPower = "Beserker",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/b/b7/Bull_Skin-Default.png/revision/latest?cb=20181212051919"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/b/b7/Bull_Skin-Default.png/revision/latest?cb=20181212051919",
+                        Health = 5200
                     },
                     new Brawler()
                     {
@@ -64,7 +68,8 @@ namespace ProjectAPI.Model
                         Attack = "Shock Rifle",
                         Super = "Scrappy!",
                         StarPower = "Energize",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/1/15/Jessie_Skin-Default.png/revision/latest?cb=20190227034727"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/1/15/Jessie_Skin-Default.png/revision/latest?cb=20190227034727",
+                        Health = 3200
                     },
                     new Brawler()
                     {
@@ -74,7 +79,8 @@ namespace ProjectAPI.Model
                         Attack = "Rockin' Rocket",
                         Super = "Rocket Rain",
                         StarPower = "Incendiary",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/7/70/Brock_Skin-Default.png/revision/latest?cb=20181212051918"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/7/70/Brock_Skin-Default.png/revision/latest?cb=20181212051918",
+                        Health = 2800
                     },
                     new Brawler()
                     {
@@ -84,7 +90,8 @@ namespace ProjectAPI.Model
                         Attack = "Short Fuse",
                         Super = "Big Barrel O' Boom",
                         StarPower = "Dyna-Jump",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/6/6e/Dynamike_Skin-Default.png/revision/latest?cb=20181212051918"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/6/6e/Dynamike_Skin-Default.png/revision/latest?cb=20181212051918",
+                        Health = 2800
                     },
                     new Brawler()
                     {
@@ -94,7 +101,8 @@ namespace ProjectAPI.Model
                         Attack = "Eagle-eyes",
                         Super = "Catch A Fox",
                         StarPower = "Circling Eagle",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/e/ee/Bo_Skin-Default.png/revision/latest?cb=20190416001137"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/e/ee/Bo_Skin-Default.png/revision/latest?cb=20190416001137",
+                        Health = 3600
                     },
                     new Brawler()
                     {
@@ -104,7 +112,8 @@ namespace ProjectAPI.Model
                         Attack = "Fists Of Fury",
                         Super = "Flying Elbow Drop",
                         StarPower = "El Fuego",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/0/04/El_Primo_Skin-Default.png/revision/latest?cb=20171111185859"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/0/04/El_Primo_Skin-Default.png/revision/latest?cb=20171111185859",
+                        Health = 5800
                     },
                     new Brawler()
                     {
@@ -114,7 +123,8 @@ namespace ProjectAPI.Model
                         Attack = "Undiluted",
                         Super = "Last Call",
                         StarPower = "Medical Use",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/3/3c/Barley_Skin-Default.png/revision/latest?cb=20181212051919"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/3/3c/Barley_Skin-Default.png/revision/latest?cb=20181212051919",
+                        Health = 2400
                     },
                     new Brawler()
                     {
@@ -124,7 +134,8 @@ namespace ProjectAPI.Model
                         Attack = "Power Chords",
                         Super = "Encore",
                         StarPower = "Da Capo!",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/2/24/Poco_Skin-Default.png/revision/latest?cb=20190129073926"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/2/24/Poco_Skin-Default.png/revision/latest?cb=20190129073926",
+                        Health = 3800
                     }, new Brawler()
                     {
                         Name = "Rosa",
@@ -133,7 +144,8 @@ namespace ProjectAPI.Model
                         Attack = "Hands of Stone",
                         Super = "Strong Stuff",
                         StarPower = "Plant Life",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/3/34/Rosa_Skin-Default.png/revision/latest?cb=20190416193326"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/3/34/Rosa_Skin-Default.png/revision/latest?cb=20190416193326",
+                        Health = 5000
                     },
                     new Brawler()
                     {
@@ -143,7 +155,8 @@ namespace ProjectAPI.Model
                         Attack = "Bouncy Bullets",
                         Super = "Trick Shot",
                         StarPower = "Super Bouncy",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/7/71/Rico_Skin-Default.png/revision/latest?cb=20190129073925"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/7/71/Rico_Skin-Default.png/revision/latest?cb=20190129073925",
+                        Health = 2400
                     },
                     new Brawler()
                     {
@@ -153,7 +166,8 @@ namespace ProjectAPI.Model
                         Attack = "Double Deuce",
                         Super = "Barrel Roll",
                         StarPower = "Steel Hoops",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/6/66/Darryl_Skin-Default.png/revision/latest?cb=20171207183139"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/6/66/Darryl_Skin-Default.png/revision/latest?cb=20171207183139",
+                        Health = 4200
                     },
                     new Brawler()
                     {
@@ -163,7 +177,8 @@ namespace ProjectAPI.Model
                         Attack = "Plunderbuss",
                         Super = "Old Lobber",
                         StarPower = "Last Blast",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/d/d6/Penny_Skin-Default.png/revision/latest?cb=20180518182615"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/d/d6/Penny_Skin-Default.png/revision/latest?cb=20180518182615",
+                        Health = 3200
                     },
                     new Brawler()
                     {
@@ -173,7 +188,8 @@ namespace ProjectAPI.Model
                         Attack = "Pickaxe",
                         Super = "Tailspin",
                         StarPower = "Power Throw",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/4/46/Carl_Skin-Default.png/revision/latest?cb=20190228043711"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/4/46/Carl_Skin-Default.png/revision/latest?cb=20190228043711",
+                        Health = 4400
                     },
                     new Brawler()
                     {
@@ -183,7 +199,8 @@ namespace ProjectAPI.Model
                         Attack = "Gunbrella",
                         Super = "Poppin'",
                         StarPower = "Ambush",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/5/5d/Piper_Skin-Default.png/revision/latest?cb=20170706213944"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/5/5d/Piper_Skin-Default.png/revision/latest?cb=20170706213944",
+                        Health = 2400
                     },
                     new Brawler()
                     {
@@ -193,7 +210,8 @@ namespace ProjectAPI.Model
                         Attack = "Scrapstorm",
                         Super = "Mama's Kiss",
                         StarPower = "Mama's Hug",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/6/68/Pam_Skin-Default.png/revision/latest?cb=20190416011450"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/6/68/Pam_Skin-Default.png/revision/latest?cb=20190416011450",
+                        Health = 4300
                     },
                     new Brawler()
                     {
@@ -203,7 +221,8 @@ namespace ProjectAPI.Model
                         Attack = "Hammer Hit",
                         Super = "Stunning Blow",
                         StarPower = "Power Grab",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/5/55/Frank_Skin-Default.png/revision/latest?cb=20180518182616"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/5/55/Frank_Skin-Default.png/revision/latest?cb=20180518182616",
+                        Health = 5800
                     },
                     new Brawler()
                     {
@@ -213,7 +232,8 @@ namespace ProjectAPI.Model
                         Attack = "Shovel Swing",
                         Super = "Life Blood",
                         StarPower = "Creepy Harvest",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/b/b2/Mortis_Skin-Default.png/revision/latest?cb=20181010200125"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/b/b2/Mortis_Skin-Default.png/revision/latest?cb=20181010200125",
+                        Health = 3800
                     },
                     new Brawler()
                     {
@@ -223,7 +243,8 @@ namespace ProjectAPI.Model
                         Attack = "Triple Tarot",
                         Super = "Gravity",
                         StarPower = "Black Portal",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/a/a7/Tara_Skin-Default.png/revision/latest?cb=20190419163832"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/a/a7/Tara_Skin-Default.png/revision/latest?cb=20190419163832",
+                        Health = 3200
                     },
                     new Brawler()
                     {
@@ -233,7 +254,8 @@ namespace ProjectAPI.Model
                         Attack = "Smoke Blast",
                         Super = "Magic Hand",
                         StarPower = "Magic Puffs",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/5/54/Gene_Skin-Default.png/revision/latest?cb=20190419163509"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/5/54/Gene_Skin-Default.png/revision/latest?cb=20190419163509",
+                        Health = 3600
                     },
                     new Brawler()
                     {
@@ -243,7 +265,8 @@ namespace ProjectAPI.Model
                         Attack = "Needle Grenade",
                         Super = "Stick Around!",
                         StarPower = "Fertilize",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/8/8e/Spike_Skin-Default.png/revision/latest?cb=20190129073953"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/8/8e/Spike_Skin-Default.png/revision/latest?cb=20190129073953",
+                        Health = 2400
                     },
                     new Brawler()
                     {
@@ -253,7 +276,8 @@ namespace ProjectAPI.Model
                         Attack = "Switchblade",
                         Super = "Swoop",
                         StarPower = "Extra Toxic",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/a/a2/Crow_Skin-Default.png/revision/latest?cb=20190222202857"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/a/a2/Crow_Skin-Default.png/revision/latest?cb=20190222202857",
+                        Health = 2400
                     },
                     new Brawler()
                     {
@@ -263,7 +287,8 @@ namespace ProjectAPI.Model
                         Attack = "Spinner Blades",
                         Super = "Smoke Bomb",
                         StarPower = "Smoke Trails",
-                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/3/33/Leon_Skin-Default.png/revision/latest?cb=20181212051917"
+                        Picture = "https://vignette.wikia.nocookie.net/brawlstars/images/3/33/Leon_Skin-Default.png/revision/latest?cb=20181212051917",
+                        Health = 3200
                     }
                 };
                 foreach (var item in brawlers)

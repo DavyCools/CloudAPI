@@ -20,7 +20,7 @@ export class OwnAPIComponent implements OnInit {
   rarity: string = "Starting Brawler";
   lijstType = ["Fighter", "Dashing Assassin", "Heavyweight","Sharpshooter","Skirmisher","Stealthy Assassin","Support","Thrower","Toxic Assassin"];
   type: string = "Fighter";
-  options: SelectItem[] = [{label:"Rarity",value:1},{label:"Type", value:2}]
+  options: SelectItem[] = [{label:"None",value:3},{label:"Rarity",value:1},{label:"Type", value:2}]
   optionSelected: string;
   keuze: string;
 
@@ -33,6 +33,11 @@ export class OwnAPIComponent implements OnInit {
     else if(event.option.label == "Type"){
       this.optionSelected = "2";
       this.SearchType();
+    }
+    else if(event.option.label == "None"){
+      this.optionSelected = "3";
+      this.keuze= "";
+      this.GetBrawlersFromAPI();
     }
   }
   SearchRarity(){
