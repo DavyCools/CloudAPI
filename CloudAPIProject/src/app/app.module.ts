@@ -25,6 +25,10 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MovieService } from './Common/movie.service';
 import { SettingsComponent } from './settings/settings.component';
 import { BrawlStarsService } from './Common/brawl-stars.service';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './Common/auth.service';
+import { AuthGuard } from './auth/auth.guard';
+import { CallbackComponent } from './callback/callback.component';
 
 @NgModule({
   declarations: [
@@ -34,17 +38,21 @@ import { BrawlStarsService } from './Common/brawl-stars.service';
     OwnAPIComponent,
     PageNotFoundComponent,
     ToolbarComponent,
-    SettingsComponent
+    SettingsComponent,
+    LoginComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path:"home", component: HomeComponent},
-      {path:"MovieAPI", component: MovieAPIComponent},
-      {path:"OwnAPI", component: OwnAPIComponent},
-      {path:"Settings", component: SettingsComponent},
-      {path: "", redirectTo: "home", pathMatch:"full" },
-      {path: "**", component: PageNotFoundComponent}
+      {path:"home", component: HomeComponent, canActivate: [AuthGuard]},
+      {path:"MovieAPI", component: MovieAPIComponent, canActivate: [AuthGuard]},
+      {path:"OwnAPI", component: OwnAPIComponent, canActivate: [AuthGuard]},
+      {path:"Settings", component: SettingsComponent, canActivate: [AuthGuard]},
+      {path:"Login", component: LoginComponent},
+      {path:"callback", component: CallbackComponent},
+      {path: "", redirectTo: "home", pathMatch:"full", canActivate: [AuthGuard]},
+      {path: "**", component: PageNotFoundComponent, canActivate: [AuthGuard]}
     ]),
     ToolbarModule,
     ButtonModule,
@@ -61,7 +69,9 @@ import { BrawlStarsService } from './Common/brawl-stars.service';
   ],
   providers: [
     MovieService,
-    BrawlStarsService
+    BrawlStarsService,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

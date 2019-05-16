@@ -1,0 +1,10 @@
+<body>
+  <div *ngIf="!authservice.isLoggedIn">
+    <h1>Log in with Auth0!</h1>
+    <button label="Log in" pButton type="button" class="ui-button-raised ui-button-rounded ui-button-success" (click)="authservice.login()"></button>
+  </div>
+  <div *ngIf="authservice.isLoggedIn">
+    <h2 class="red">Logging out will prevent you from using the site!</h2>
+    <button label="Log out" pButton type="button" class="ui-button-raised ui-button-rounded ui-button-danger" (click)="authservice.logout()"></button>
+  </div>
+</body>

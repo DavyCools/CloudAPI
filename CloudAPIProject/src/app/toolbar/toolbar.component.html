@@ -4,19 +4,14 @@
       
   </div>
   <div class="ui-toolbar-group-left">
-      
       <button pButton type="button" label="home"  [routerLink] ="['/home']" [routerLinkActive] ="['ui-button-success']" icon="pi pi-home"></button>
       <button pButton type="button" label="MovieAPI" [routerLink] ="['/MovieAPI']" [routerLinkActive] ="['ui-button-success']" icon="pi pi-video"></button>
       <button pButton type="button" label="OwnAPI" [routerLink] ="['/OwnAPI']" [routerLinkActive] ="['ui-button-success']" icon="pi pi-star-o"></button>
       <button pButton type="button" label="Settings" [routerLink] ="['/Settings']" [routerLinkActive] ="['ui-button-success']" icon="pi pi-cog"></button>
-      <!-- Bij button voor een icon: icon="pi pi-plus" -->
-      <!-- <i class="ui-toolbar-separator pi pi-bars" style="vertical-align: middle"></i> -->
-      <!-- <p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="ui-button-warning"></p-splitButton> -->
     </div>
   
-  <!-- <div class="ui-toolbar-group-right">
-      <button pButton type="button" icon="pi pi-search"></button>
-      <button pButton type="button" icon="pi pi-calendar" class="ui-button-success"></button>
-      <button pButton type="button" icon="pi pi-times" class="ui-button-danger"></button>
-  </div> -->
+  <div class="ui-toolbar-group-right">
+      <button *ngIf="!authservice.isLoggedIn" pButton type="button" label="Login" [routerLink] ="['/Login']" [routerLinkActive] ="['ui-button-success']" icon="pi pi-sign-in"></button>
+      <button *ngIf="authservice.isLoggedIn" pButton type="button" label="Logout" [routerLink] ="['/Login']" [routerLinkActive] ="['ui-button-success']" icon="pi pi-sign-out"></button>
+  </div>
 </p-toolbar>

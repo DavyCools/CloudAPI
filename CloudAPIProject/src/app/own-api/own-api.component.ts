@@ -18,7 +18,7 @@ export class OwnAPIComponent implements OnInit {
   idRemove: number = 0;
   lijstRarity = ["Starting Brawler", "Trophy Road Reward", "Rare", "Super Rare", "Epic", "Mythic", "Legendary"];
   rarity: string = "Starting Brawler";
-  lijstType = ["Fighter", "Dashing Assassin", "Heavyweight","Sharpshooter","Skirmisher","Stealthy Assassin","Support","Thrower","Toxic Assassin"];
+  lijstType = ["Fighter", "Dashing Assassin", "Heavyweight","Sharpshooter","Skimisher","Stealthy Assassin","Support","Thrower","Toxic Assassin"];
   type: string = "Fighter";
   options: SelectItem[] = [{label:"None",value:3},{label:"Rarity",value:1},{label:"Type", value:2}]
   optionSelected: string;

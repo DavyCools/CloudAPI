@@ -4,14 +4,6 @@
       <h1>Search a movie/serie of your choice!</h1>
       <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)" (onSelect)="Choice($event)"></p-autoComplete>
       <p *ngIf="error">{{error}}</p>
-      <!-- <div *ngIf="apiService.film">
-          <div *ngIf="apiService.film.Search">
-              <h2>{{apiService.film.Search[0].Title}}</h2>
-              <p *ngIf="apiService.film.Search[0].Type == 'movie'">De film is uitgebracht in het jaar {{apiService.film.Search[0].Year}}.</p>
-              <p *ngIf="apiService.film.Search[0].Type == 'series'">De serie is uitgebracht in het jaar {{apiService.film.Search[0].Year}}.</p>
-              <img *ngIf="apiService.film.Search[0].Poster" [src]="apiService.film.Search[0].Poster">
-          </div>
-      </div> -->
 
       <div *ngIf="apiService.gekozenFilm">
           <h2>{{apiService.gekozenFilm.Title}}</h2>
