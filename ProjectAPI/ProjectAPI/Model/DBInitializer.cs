@@ -13,7 +13,7 @@ namespace ProjectAPI.Model
             context.Database.EnsureCreated();
 
             //Is there already a test?
-            if (!context.Brawlers.Any())
+            if (context.Brawlers.Count() == 0)
             {
                 Brawler[] brawlers = {
                     new Brawler()
