@@ -10,6 +10,7 @@ export class MovieService {
   gekozenFilm: MovieInfo;
   randomFilm: MovieInfo;
   keuzeAantalFilms:number = 10;
+  domain:string = "http://www.omdbapi.com/";
   constructor(private http: HttpClient) { }
 
   public GetApi(naam:String, page:number=1){
@@ -20,7 +21,7 @@ export class MovieService {
     //return this.http.get<Movie>("http://www.omdbapi.com/?apikey=39878d5a&page=1&s=Batman")
 
     //BACKUP KEY IF LIMIT REACHED
-    return this.http.get<Movie>(`http://www.omdbapi.com/?apikey=8193da63&page=${page}&s=${naam}`)
+    return this.http.get<Movie>(`${this.domain}?apikey=8193da63&page=${page}&s=${naam}`)
   }
   public GetMovieByID(id:String){
     //DEFAULT KEY
@@ -32,7 +33,7 @@ export class MovieService {
     //return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=39878d5a&i=${id}&plot=full`)
 
     //BACKUP KEY IF LIMIT REACHED
-    return this.http.get<MovieInfo>(`http://www.omdbapi.com/?apikey=8193da63&i=${id}`)
+    return this.http.get<MovieInfo>(`${this.domain}?apikey=8193da63&i=${id}`)
   }
 }
 

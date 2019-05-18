@@ -15,6 +15,7 @@ import {SpinnerModule} from 'primeng/spinner';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
+import {CardModule} from 'primeng/card';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -65,7 +66,8 @@ import { CallbackComponent } from './callback/callback.component';
     SpinnerModule,
     SelectButtonModule,
     MessagesModule,
-    MessageModule
+    MessageModule,
+    CardModule
   ],
   providers: [
     MovieService,

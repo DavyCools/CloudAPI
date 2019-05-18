@@ -2,24 +2,31 @@
   <div>
     <h1>Movie API</h1>
     <p>How many results must there be shown when searching?</p>
-    <select name="" id="" [(ngModel)]="apiService.keuzeAantalFilms">
-      <option *ngFor="let item of lijstKeuzens" value="{{item}}">{{item}} movies</option>
-    </select>
+    <div class="dropdown">
+      <select name="" id="" class="dropdown-select" [(ngModel)]="apiService.keuzeAantalFilms">
+        <option *ngFor="let item of lijstKeuzens" value="{{item}}">{{item}} movies</option>
+      </select>
+    </div>
   </div>
   <div>
       <h1>Brawl Stars API</h1>
       <p>How many results need to be shown each page?</p>
-      <select name="" id="" [(ngModel)]="apiServiceBrawlStars.pageSize">
-        <option *ngFor="let item of lijstPaginanummer" value="{{item}}">{{item}} brawlers</option>
-      </select>
+      <div class="dropdown">
+        <select name="" id="" class="dropdown-select" [(ngModel)]="apiServiceBrawlStars.pageSize">
+          <option *ngFor="let item of lijstPaginanummer" value="{{item}}">{{item}} brawlers</option>
+        </select>
+      </div>
       <p>on which attribute should we sort?</p>
-      <select name="" id="" [(ngModel)]="apiServiceBrawlStars.keuzeSoryBy">
+      <div class="dropdown">
+        <select name="" id="" class="dropdown-select" [(ngModel)]="apiServiceBrawlStars.keuzeSoryBy">
           <option *ngFor="let item of lijstsoryBy" value="{{item}}">{{item}}</option>
-      </select>
+        </select>
+      </div>
       <p>Do you want to sort ascending or descending?</p>
-      <select name="" id="" [(ngModel)]="apiServiceBrawlStars.keuzeRichting">
+      <div class="dropdown">
+        <select name="" id="" class="dropdown-select" [(ngModel)]="apiServiceBrawlStars.keuzeRichting">
           <option *ngFor="let item of lijstRichting" value="{{item}}">{{item}}</option>
-      </select>
+        </select>
+      </div>
   </div>
 </section>
-

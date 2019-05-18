@@ -1,5 +1,24 @@
 <router-outlet></router-outlet>
 <body>
-    <img src="assets/img/LogoDC.png">
-    <h1>We are not perfect, but we create it</h1>
+    <p-card>
+        <h1>Movie API</h1>
+        <a [routerLink] ="['/MovieAPI']"><img src="assets/img/IMDb.jpg"></a>
+        <p>Search a movie you want more info about. 
+            From short story to the number of stars from 3 sites. 
+            You can also see the director and the actors from the movie with the duration and many more!
+        </p>
+        <button label="Search a Movie now!" pButton type="button" class="ui-button-raised ui-button-rounded ui-button-info" [routerLink] ="['/MovieAPI']"></button>
+    </p-card>
+    <section>
+
+    </section>
+    <p-card>
+        <h1>Brawl Stars API</h1>
+        <a [routerLink] ="['/OwnAPI']"><img src="assets/img/brawlstars.jpg"></a>
+        <p>Search a brawler from the popular brawl stars game from supercell. 
+            Check if you're brawler is hard to get or how much HP the brawler has. 
+            This way you will now what you stand up against in the game!
+        </p>
+        <button label="Search a Brawler now!" pButton type="button" class="ui-button-raised ui-button-rounded ui-button-info" [routerLink] ="['/OwnAPI']"></button>
+    </p-card>
 </body>

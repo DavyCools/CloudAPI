@@ -1,6 +1,19 @@
 body{
+    display: grid;
+    grid-template-columns: 49% 2% 49%;
     text-align: center;
 }
-h1{
-    font-style: oblique;
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+p{
+    font-size: large;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+button{
+    font-size: large;
 }

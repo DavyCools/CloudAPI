@@ -1,7 +1,7 @@
 <router-outlet></router-outlet>
 <body>
   <section>
-      <h1>Search a movie/serie of your choice!</h1>
+      <h1>Search a movie/serie of your choice</h1>
       <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)" (onSelect)="Choice($event)"></p-autoComplete>
       <p *ngIf="error">{{error}}</p>
 
